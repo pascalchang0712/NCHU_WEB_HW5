@@ -1,0 +1,63 @@
+<html>
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+
+<form action='webform.jsp' name= "form" method="post">
+帳號<input type="text" size="20" name="username"><br>
+密碼<input type="password" size="20" name="userpass"><br>
+
+興趣<select name="interest" size ='3' multiple ><br>
+<option value="volly" selected>排球</option>
+<option value="basketball">籃球</option>
+<option value="tennis">網球</option>
+</select><br>
+性別
+<input type="radio" name="sex" value="male" checked>男
+<input type="radio" name="sex" value="female">女
+<br>
+喜歡的科目<select name="subject" size ='1'><br>
+<option value="Chinese">國文</option>
+<option value="English">英文</option>
+<option value="Math">數學</option>
+</select><br>
+通勤方式
+<input type="checkbox" name='commute' value='car' checked>開車
+<input type="checkbox" name='commute' value='bike'>腳踏車
+<input type='checkbox' name='commute' value='walk'>走路
+<br>
+
+自傳<textarea name="note" cols="50" rows="10"></textarea><br><br>
+<input type="submit" value="送出" >
+<input type="reset" value="重設">
+</form>
+
+<div><p id="output"></p></div>
+
+
+<script>
+        function post(){
+		var output = document.getElementById("output");
+		var my_text = document.form.username.value;
+		var my_password = document.form.userpass.value;
+		var my_gender = document.form.sex.value;
+		var my_hobby = document.form.hobby.value;
+		var my_sub = document.form.subject.value;
+		var my_note = document.form.note.value;
+			output.innerHTML = "<table border ="+'"'+"1"+'"'+ "> <tr> <td>NAME</td> <td>GENDER</td> <td>HOBBY</td> <td>SUBJECT</td> <td>NOTE</td></tr> <tr><td>"+my_text+"</td> <td>"+my_gender+"</td> <td>"+my_hobby+"</td> <td>"+my_sub+"</td> <td>"+my_note+"</td> </tr></table>";
+		alert("輸入成功");
+		}
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
